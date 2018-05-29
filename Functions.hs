@@ -75,19 +75,22 @@ winkler s1 s2 jaro
 			jaro + ((realToFrac l * p) * (1.0 - jaro))
 
 
-jaroWinklerFactor :: String -> String -> Float
-jaroWinklerFactor "" _ = 0.0
-jaroWinklerFactor _ "" = 0.0
-jaroWinklerFactor s1 s2
+jaroWinkler :: String -> String -> Float
+jaroWinkler "" _ = 0.0
+jaroWinkler _ "" = 0.0
+jaroWinkler s1 s2
 	| s1 == s2 = 1.0
     | s1 /= s2 = winkler s1 s2 $ jaro s1 s2
-    
+	
+jaroWinklerFactor :: Record -> Record -> Float
+jaroWinklerFactor r0 r1 = jaroWinkler (addr r0) (addr r1)
+
 -- Haversine Distance
 angToHaversine :: Float -> Float
 angToHaversine = (^ 2) . sin . (/ 2)
  
-haversineFactor :: (Float, Float) -> (Float, Float) -> Float
-haversineFactor = distDeg 6371
+haversine :: (Float, Float) -> (Float, Float) -> Float
+haversine = distDeg 6371
   where
     distDeg radius p1 p2 = distRad radius (deg2rad p1) (deg2rad p2)
     distRad radius (lat1, lng1) (lat2, lng2) =
@@ -100,4 +103,11 @@ haversineFactor = distDeg 6371
             ((cos lat1 * cos lat2) * angToHaversine (lng2 - lng1))))
     deg2rad = d2r *** d2r
       where
-        d2r = (/ 180) . (pi *)
+		d2r = (/ 180) . (pi *)
+		
+haversineFactor :: Record -> Record -> Float
+haversineFactor r0 r1
+	| mid >= 1.0 = 0.0
+	| otherwise = 1.0 - mid / 1.0
+	where
+		mid = haversine (loc r0) (loc r1)
