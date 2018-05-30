@@ -21,5 +21,5 @@ ind (i, _, _, _) = i
 rawSet :: [Record]
 rawSet = [(1, 0.0, 0.2, "Av. Beira Rio"), (2, 0.0, 0.21, "Avenida Beira Rio"), (3, 0.8, 0.0, "Rio Branco Avelino")]
 
-finalSet :: [Int]
-finalSet = [1, 3]
+finalSet :: [(Int, Int)]
+finalSet = [(1,2)]

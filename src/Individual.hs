@@ -7,12 +7,14 @@ module Individual (
 
 import Record
 import Functions
+import qualified Data.IntDisjointSet as DSet
+import Data.List
 
 data Individual = I Int Float Float Float
     deriving Show
 
 threshold :: Float
-threshold = 0.85
+threshold = 0.3
 
 similarity :: Individual -> Individual -> Float
 similarity (I id arg0 arg1 arg2) (I id' arg0' arg1' arg2') = (3.0 - diff) / 3.0
@@ -48,3 +50,21 @@ genEdges' i (p:ps)
 
 genEdges :: Individual -> [Record] -> [(Int,Int)]
 genEdges i rs = genEdges' (i) (genPairs rs rs) 
+
+correctMergedCount :: [(Int,Int)] -> Int
+correctMergedCount [] = 0
+correctMergedCount (a:as) 
+    | fst (DSet.equivalent (fst a) (snd a) (ds)) = 1 + correctMergedCount as
+    | otherwise = correctMergedCount as
+    where
+        ds = DSet.fromList finalSet
+
+fitness :: Individual -> Float
+fitness i
+    | tot == 0 && acc == 0 = 1.0
+    | tot == 0 = 0.0
+    | otherwise = acc / tot
+    where 
+        edges = genEdges i rawSet
+        tot = fromIntegral (length edges)
+        acc = fromIntegral (correctMergedCount (edges))

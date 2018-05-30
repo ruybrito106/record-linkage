@@ -8,8 +8,11 @@ import Individual
 
 data Generation = G [Individual]
 
-let genSize = 100
-let chosenAmount = 30
+genSize :: Int
+genSize = 100
+
+chosenAmount :: Int
+chosenAmount = 30
 
 -- evolve :: Generation -> Generation
 -- pickBestFit :: Generation -> Generation

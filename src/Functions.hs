@@ -9,10 +9,9 @@ import Record
 
 -- Edit Distance
 edit :: Eq a => [a] -> [a] -> Int
-edit a b 
-    = last (if lab == 0 then mainDiag
-	    else if lab > 0 then lowers !! (lab - 1)
-		    else{- < 0 -}   uppers !! (-1 - lab))
+edit a b = last (if lab == 0 then mainDiag
+		else if lab > 0 then lowers !! (lab - 1)
+		else{- < 0 -}   uppers !! (-1 - lab))
     where mainDiag = oneDiag a b (head uppers) (-1 : head lowers)
 	  uppers = eachDiag a b (mainDiag : uppers) 
 	  lowers = eachDiag b a (mainDiag : lowers)
