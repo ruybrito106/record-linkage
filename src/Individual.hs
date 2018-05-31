@@ -2,7 +2,10 @@ module Individual (
     Individual,
     cross,
     similarity,
-    -- fitness,
+    toList,
+    sortByFitness,
+    takeBest,
+    fitness,
 ) where
 
 import Record
@@ -14,7 +17,33 @@ data Individual = I Int Float Float Float
     deriving Show
 
 threshold :: Float
-threshold = 0.3
+threshold = 0.5
+
+toList :: [Individual]
+toList = [I (-1) (a) (b) ((a + b)/2.0) | a <- as, b <- bs]
+    where
+        as = map (\x -> x / 3.0) ([0..3] :: [Float])
+        bs = map (\x -> x / 3.0) ([3, 2..0] :: [Float])
+
+sortByFitness :: [Individual] -> [Individual]
+sortByFitness [] = []
+sortByFitness (a:as) = left ++ [a] ++ right
+    where
+        left = (sortByFitness (filter (\x -> fitness x <= fitness a) (as)))
+        right = (sortByFitness (filter (\x -> fitness x > fitness a) (as)))
+
+takeBest :: [Individual] -> [Individual]
+takeBest as = low ++ avg ++ best
+    where
+        len = length as
+        best = drop (quot (95 * len) (100)) as -- 5% best
+        avg = crossBestFit (drop (quot (length as) (2)) (as)) -- 50% best mixed
+        low = take (len - (length best) - (length avg)) (reverse as)
+
+crossBestFit :: [Individual] -> [Individual]
+crossBestFit [] = []
+crossBestFit [a] = [a]
+crossBestFit (a:b:as) = (cross (a) (b)) : (crossBestFit as) 
 
 similarity :: Individual -> Individual -> Float
 similarity (I id arg0 arg1 arg2) (I id' arg0' arg1' arg2') = (3.0 - diff) / 3.0

@@ -1,19 +1,20 @@
 module Generation (
-    -- evolve,
-    -- pickBestFit,
-    -- completeSet,
+    evolve,
 ) where
 
 import Individual
 
 data Generation = G [Individual]
+    deriving Show
 
-genSize :: Int
-genSize = 100
+firstGeneration :: Generation
+firstGeneration = G toList
 
-chosenAmount :: Int
-chosenAmount = 30
+bestFit :: Generation -> Float
+bestFit (G []) = 0.0
+bestFit (G (a:as)) = max (fitness a) (bestFit (G as))  
 
--- evolve :: Generation -> Generation
--- pickBestFit :: Generation -> Generation
--- completeSet :: Generation -> Generation
+evolve :: Generation -> Generation
+evolve (G as) = G (f' as)
+    where
+        f' = takeBest . sortByFitness
