@@ -1,5 +1,9 @@
 module Generation (
+    Generation,
     evolve,
+    firstGeneration,
+    bestFit,
+    allFit,
 ) where
 
 import Individual
@@ -9,6 +13,10 @@ data Generation = G [Individual]
 
 firstGeneration :: Generation
 firstGeneration = G toList
+
+allFit :: Generation -> [Float]
+allFit (G []) = []
+allFit (G (a:as)) = (fitness a) : (allFit (G as)) 
 
 bestFit :: Generation -> Float
 bestFit (G []) = 0.0

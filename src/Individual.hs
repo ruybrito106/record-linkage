@@ -1,11 +1,15 @@
 module Individual (
     Individual,
     cross,
+    factors,
+    fromFactors,
     similarity,
     toList,
     sortByFitness,
     takeBest,
     fitness,
+    newIndividual,
+    allFitness,
 ) where
 
 import Record
@@ -16,28 +20,39 @@ import Data.List
 data Individual = I Int Float Float Float
     deriving Show
 
+instance Eq Individual where
+    a == b = fitness a == fitness b
+
+instance Ord Individual where
+    a <= b = fitness a <= fitness b
+
 threshold :: Float
-threshold = 0.5
+threshold = 0.8
+
+newIndividual :: Int -> Float -> Float -> Float -> Individual
+newIndividual x a b c  = I x a b c
+
+factors :: Individual -> [Float]
+factors (I x a b c) = [a, b, c]
+
+fromFactors :: [Float] -> Individual
+fromFactors (a:b:as) = newIndividual (-1) (a) (b) (head as)
 
 toList :: [Individual]
 toList = [I (-1) (a) (b) ((a + b)/2.0) | a <- as, b <- bs]
     where
-        as = map (\x -> x / 3.0) ([0..3] :: [Float])
-        bs = map (\x -> x / 3.0) ([3, 2..0] :: [Float])
+        as = map (\x -> x / 2.0) ([0..2] :: [Float])
+        bs = map (\x -> x / 2.0) ([2, 1..0] :: [Float])
 
 sortByFitness :: [Individual] -> [Individual]
-sortByFitness [] = []
-sortByFitness (a:as) = left ++ [a] ++ right
-    where
-        left = (sortByFitness (filter (\x -> fitness x <= fitness a) (as)))
-        right = (sortByFitness (filter (\x -> fitness x > fitness a) (as)))
+sortByFitness l = sort l
 
 takeBest :: [Individual] -> [Individual]
 takeBest as = low ++ avg ++ best
     where
         len = length as
-        best = drop (quot (95 * len) (100)) as -- 5% best
-        avg = crossBestFit (drop (quot (length as) (2)) (as)) -- 50% best mixed
+        best = drop (quot (80 * len) (100)) as -- 20% best
+        avg = crossBestFit (drop (quot (70 * len) (100)) (as)) -- 30% best mixed
         low = take (len - (length best) - (length avg)) (reverse as)
 
 crossBestFit :: [Individual] -> [Individual]
@@ -78,22 +93,46 @@ genEdges' i (p:ps)
     | otherwise = genEdges' i ps
 
 genEdges :: Individual -> [Record] -> [(Int,Int)]
-genEdges i rs = genEdges' (i) (genPairs rs rs) 
+genEdges i rs = filter (\x -> fst x < snd x) (genEdges' (i) (genPairs rs rs)) 
 
-correctMergedCount :: [(Int,Int)] -> Int
-correctMergedCount [] = 0
-correctMergedCount (a:as) 
-    | fst (DSet.equivalent (fst a) (snd a) (ds)) = 1 + correctMergedCount as
-    | otherwise = correctMergedCount as
+truePositives :: [(Int,Int)] -> Int
+truePositives [] = 0
+truePositives (a:as) 
+    | fst (DSet.equivalent (fst a) (snd a) (ds)) = 1 + truePositives as
+    | otherwise = truePositives as
     where
         ds = DSet.fromList finalSet
 
+falseNegatives :: [(Int, Int)] -> Int
+falseNegatives l = (length finalSet) - (truePositives l)
+
+falsePositives :: [(Int, Int)] -> Int
+falsePositives [] = 0
+falsePositives (a:as) 
+    | (xor (contains (fst (a)) (singles)) (contains (snd (a)) (singles))) || fst (DSet.equivalent (fst a) (snd a) (ds)) == False = 1 + falsePositives as
+    | otherwise = falsePositives as
+    where
+        contains x [] = False
+        contains x (a:as) = x == a || (contains x as)
+        xor a b = (a == False && b == True) || (a == True && b == False)
+        ds = DSet.fromList finalSet
+
+trueNegatives :: [(Int, Int)] -> Int
+trueNegatives l = (quot (x * (x - 1)) (2)) + (x * 2 * y) - (falsePositives l) 
+    where
+        x = length singles
+        y = length finalSet
+
 fitness :: Individual -> Float
-fitness i
-    | tot == 0 && acc == 0 = 1.0
-    | tot == 0 = 0.0
-    | otherwise = acc / tot
-    where 
+fitness i 
+    | (tp + fn) * (tn + tp) == 0.0 = 0.0
+    | otherwise = (tn * tp) / ((tp + fn) * (tn + tp)) 
+    where
         edges = genEdges i rawSet
-        tot = fromIntegral (length edges)
-        acc = fromIntegral (correctMergedCount (edges))
+        tn = fromIntegral (trueNegatives edges)
+        fp = fromIntegral (falsePositives edges)
+        tp = fromIntegral (truePositives edges)
+        fn = fromIntegral (falseNegatives edges)
+
+allFitness :: [Individual] -> [Float]
+allFitness l = map (\x -> fitness x) l 

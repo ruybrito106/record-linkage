@@ -66,3 +66,4 @@ packages:
 
 extra-deps:
 - disjoint-set-0.2
+- QuickCheck-2.11.3

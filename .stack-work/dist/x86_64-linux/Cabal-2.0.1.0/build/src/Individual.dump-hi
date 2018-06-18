@@ -1,0 +1,705 @@
+
+==================== FINAL INTERFACE ====================
+2018-06-18 02:50:24.518963 UTC
+
+interface record-linkage-0.1.0.0-GiD3fk8Q0aPH6dRqt0OdA7:Individual 8022
+  interface hash: 076e441d42accde6f30c32f8583b8c88
+  ABI hash: b64af8aebc0a9bb8744076c80299b37f
+  export-list hash: cbe137a47f80cefca4b56c8c3a6623c9
+  orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
+  flag hash: d3f9096bac2e1e79f6ff76d0840aa157
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  Individual.allFitness
+  Individual.cross
+  Individual.fitness
+  Individual.newIndividual
+  Individual.similarity
+  Individual.sortByFitness
+  Individual.takeBest
+  Individual.toList
+  Individual.Individual
+module dependencies: Functions Record
+package dependencies: array-0.5.2.0 base-4.10.1.0*
+                      containers-0.5.10.2 deepseq-1.4.3.0 disjoint-set-0.2
+                      ghc-prim-0.5.1.1 integer-gmp-1.0.1.0 mtl-2.2.2 transformers-0.5.2.0
+orphans: transformers-0.5.2.0:Control.Monad.Trans.Error
+         base-4.10.1.0:GHC.Float base-4.10.1.0:GHC.Base
+family instance modules: base-4.10.1.0:Control.Applicative
+                         base-4.10.1.0:Data.Complex base-4.10.1.0:Data.Either
+                         base-4.10.1.0:Data.Functor.Compose base-4.10.1.0:Data.Functor.Const
+                         base-4.10.1.0:Data.Functor.Identity
+                         base-4.10.1.0:Data.Functor.Product base-4.10.1.0:Data.Functor.Sum
+                         base-4.10.1.0:Data.List.NonEmpty base-4.10.1.0:Data.Monoid
+                         base-4.10.1.0:Data.Semigroup base-4.10.1.0:Data.Type.Equality
+                         base-4.10.1.0:Data.Version base-4.10.1.0:Data.Void
+                         base-4.10.1.0:GHC.Exts base-4.10.1.0:GHC.Generics
+                         base-4.10.1.0:GHC.IO.Exception base-4.10.1.0:GHC.TypeLits
+                         base-4.10.1.0:GHC.TypeNats containers-0.5.10.2:Data.IntMap.Internal
+                         containers-0.5.10.2:Data.IntSet.Internal
+import  -/  base-4.10.1.0:Data.Foldable 9ed87455d68e87ff2b5b8725eae9897e
+import  -/  base-4.10.1.0:Data.List 4ab7fa2a1b87502b23af891a384f0506
+import  -/  base-4.10.1.0:Data.OldList 555420b092ca8cf0a8f9666bc0e07dcf
+import  -/  base-4.10.1.0:Data.Tuple 8fa1305aa5032ea35e2a54fa5f1e78f9
+import  -/  base-4.10.1.0:GHC.Base 782fd99b5e36f3698a26179a49afca64
+import  -/  base-4.10.1.0:GHC.List e3060fbeb44ce0038e6b4dedf2dd9cf1
+import  -/  base-4.10.1.0:GHC.Num 6e1dc5d36d99a802edb39b92bb1923b8
+import  -/  base-4.10.1.0:GHC.Real 3c62834bc25e762eabc44149c4cc142d
+import  -/  base-4.10.1.0:GHC.Show 0a8ce2b5e533d1c2cfb7954e6736be45
+import  -/  base-4.10.1.0:Prelude 31945b7d0084063347fc52506d3a4020
+import  -/  disjoint-set-0.2:Data.IntDisjointSet e0f97767128616689e0f1e605b794dfb
+import  -/  ghc-prim-0.5.1.1:GHC.Classes 93e2660065dce9329577e83d76d8f0d4
+import  -/  Functions aca09d271839b442935a3485b661b551
+  exports: 5651e587eaf62045bcbe698cd77d5b3c
+  editDistanceFactor 85573f5be708d04606f8654c6a9927fc
+  haversineFactor 1061cadada2454d246e2458b4796f07d
+  jaroWinklerFactor 3dcd009fbd19fb649b8d6e4a4a291744
+import  -/  Record 3068bd0f08c72ac399f9c89c2915badc
+  exports: 31dbb412610e8c521cd7b1ae7dfff739
+  Record 4f3f9108406a0a09e89d65bee1416da6
+  finalSet aff5e66cb01039a7ffcb9d3274fb1a1a
+  ind a49857e0c144d43878dcb39695289512
+  rawSet c07eae8230af1f4c5e0fe12166a4c109
+  singles 767dc85ca6e0047fe9e7f5e73a5ccb61
+5b72c6e67cfc581a821b9096a4253857
+  $fEqIndividual :: GHC.Classes.Eq Individual.Individual
+  DFunId
+  {- Strictness: m, Inline: CONLIKE,
+     Unfolding: DFun:.
+                  @ Individual.Individual
+                  Individual.$fEqIndividual_$c==
+                  Individual.$fEqIndividual_$c/= -}
+5b72c6e67cfc581a821b9096a4253857
+  $fEqIndividual_$c/= ::
+    Individual.Individual -> Individual.Individual -> GHC.Types.Bool
+  {- Arity: 2,
+     Strictness: <L,1*U(A,U(U),U(U),U(U))><L,1*U(A,U(U),U(U),U(U))>,
+     Inline: (sat-args=2),
+     Unfolding: InlineRule (2, False, False)
+                (\ (x :: Individual.Individual) (y :: Individual.Individual) ->
+                 case GHC.Classes.eqFloat
+                        (Individual.fitness x)
+                        (Individual.fitness y) of wild {
+                   GHC.Types.False -> GHC.Types.True
+                   GHC.Types.True -> GHC.Types.False }) -}
+5b72c6e67cfc581a821b9096a4253857
+  $fEqIndividual_$c== ::
+    Individual.Individual -> Individual.Individual -> GHC.Types.Bool
+  {- Arity: 2,
+     Strictness: <L,1*U(A,U(U),U(U),U(U))><L,1*U(A,U(U),U(U),U(U))>,
+     Unfolding: InlineRule (2, True, False)
+                (\ (a :: Individual.Individual) (b :: Individual.Individual) ->
+                 case Individual.fitness a of wild { GHC.Types.F# x ->
+                 case Individual.fitness b of wild1 { GHC.Types.F# y ->
+                 GHC.Prim.tagToEnum#
+                   @ GHC.Types.Bool
+                   (GHC.Prim.eqFloat# x y) } }) -}
+5b72c6e67cfc581a821b9096a4253857
+  $fOrdIndividual :: GHC.Classes.Ord Individual.Individual
+  DFunId
+  {- Strictness: m, Inline: CONLIKE,
+     Unfolding: DFun:.
+                  @ Individual.Individual
+                  Individual.$fEqIndividual
+                  Individual.$fOrdIndividual_$ccompare
+                  Individual.$fOrdIndividual_$c<
+                  Individual.$fOrdIndividual_$c<=
+                  Individual.$fOrdIndividual_$c>
+                  Individual.$fOrdIndividual_$c>=
+                  Individual.$fOrdIndividual_$cmax
+                  Individual.$fOrdIndividual_$cmin -}
+5b72c6e67cfc581a821b9096a4253857
+  $fOrdIndividual_$c< ::
+    Individual.Individual -> Individual.Individual -> GHC.Types.Bool
+  {- Arity: 2,
+     Strictness: <L,1*U(A,U(U),U(U),U(U))><L,1*U(A,U(U),U(U),U(U))>,
+     Unfolding: InlineRule (2, True, False)
+                (\ (x :: Individual.Individual) (y :: Individual.Individual) ->
+                 case Individual.$wfitness x of ww { DEFAULT ->
+                 case Individual.$wfitness y of ww1 { DEFAULT ->
+                 case GHC.Prim.tagToEnum#
+                        @ GHC.Types.Bool
+                        (GHC.Prim.eqFloat# ww ww1) of wild {
+                   GHC.Types.False
+                   -> GHC.Prim.tagToEnum# @ GHC.Types.Bool (GHC.Prim.leFloat# ww ww1)
+                   GHC.Types.True -> GHC.Types.False } } }) -}
+5b72c6e67cfc581a821b9096a4253857
+  $fOrdIndividual_$c<= ::
+    Individual.Individual -> Individual.Individual -> GHC.Types.Bool
+  {- Arity: 2,
+     Strictness: <L,1*U(A,U(U),U(U),U(U))><L,1*U(A,U(U),U(U),U(U))>,
+     Unfolding: InlineRule (2, True, False)
+                (\ (a :: Individual.Individual) (b :: Individual.Individual) ->
+                 case Individual.fitness a of wild { GHC.Types.F# x ->
+                 case Individual.fitness b of wild1 { GHC.Types.F# y ->
+                 GHC.Prim.tagToEnum#
+                   @ GHC.Types.Bool
+                   (GHC.Prim.leFloat# x y) } }) -}
+5b72c6e67cfc581a821b9096a4253857
+  $fOrdIndividual_$c> ::
+    Individual.Individual -> Individual.Individual -> GHC.Types.Bool
+  {- Arity: 2,
+     Strictness: <L,1*U(A,U(U),U(U),U(U))><L,1*U(A,U(U),U(U),U(U))>,
+     Unfolding: InlineRule (2, True, False)
+                (\ (x :: Individual.Individual) (y :: Individual.Individual) ->
+                 case Individual.$wfitness x of ww { DEFAULT ->
+                 case Individual.$wfitness y of ww1 { DEFAULT ->
+                 case GHC.Prim.tagToEnum#
+                        @ GHC.Types.Bool
+                        (GHC.Prim.eqFloat# ww ww1) of wild {
+                   GHC.Types.False
+                   -> case GHC.Prim.tagToEnum#
+                             @ GHC.Types.Bool
+                             (GHC.Prim.leFloat# ww ww1) of wild1 {
+                        GHC.Types.False -> GHC.Types.True
+                        GHC.Types.True -> GHC.Types.False }
+                   GHC.Types.True -> GHC.Types.False } } }) -}
+5b72c6e67cfc581a821b9096a4253857
+  $fOrdIndividual_$c>= ::
+    Individual.Individual -> Individual.Individual -> GHC.Types.Bool
+  {- Arity: 2,
+     Strictness: <L,1*U(A,U(U),U(U),U(U))><L,1*U(A,U(U),U(U),U(U))>,
+     Unfolding: InlineRule (2, True, False)
+                (\ (x :: Individual.Individual) (y :: Individual.Individual) ->
+                 case Individual.$wfitness x of ww { DEFAULT ->
+                 case Individual.$wfitness y of ww1 { DEFAULT ->
+                 case GHC.Prim.tagToEnum#
+                        @ GHC.Types.Bool
+                        (GHC.Prim.eqFloat# ww ww1) of wild {
+                   GHC.Types.False
+                   -> case GHC.Prim.tagToEnum#
+                             @ GHC.Types.Bool
+                             (GHC.Prim.leFloat# ww ww1) of wild1 {
+                        GHC.Types.False -> GHC.Types.True
+                        GHC.Types.True -> GHC.Types.False }
+                   GHC.Types.True -> GHC.Types.True } } }) -}
+5b72c6e67cfc581a821b9096a4253857
+  $fOrdIndividual_$ccompare ::
+    Individual.Individual
+    -> Individual.Individual -> GHC.Types.Ordering
+  {- Arity: 2,
+     Strictness: <L,1*U(A,U(U),U(U),U(U))><L,1*U(A,U(U),U(U),U(U))>,
+     Unfolding: (\ (x :: Individual.Individual)
+                   (y :: Individual.Individual) ->
+                 case Individual.$wfitness x of ww { DEFAULT ->
+                 case Individual.$wfitness y of ww1 { DEFAULT ->
+                 case GHC.Prim.tagToEnum#
+                        @ GHC.Types.Bool
+                        (GHC.Prim.eqFloat# ww ww1) of wild {
+                   GHC.Types.False
+                   -> case GHC.Prim.tagToEnum#
+                             @ GHC.Types.Bool
+                             (GHC.Prim.leFloat# ww ww1) of wild1 {
+                        GHC.Types.False -> GHC.Types.GT GHC.Types.True -> GHC.Types.LT }
+                   GHC.Types.True -> GHC.Types.EQ } } }) -}
+5b72c6e67cfc581a821b9096a4253857
+  $fOrdIndividual_$cmax ::
+    Individual.Individual
+    -> Individual.Individual -> Individual.Individual
+  {- Arity: 2,
+     Strictness: <L,U(U,U(U),U(U),U(U))><L,U(U,U(U),U(U),U(U))>,
+     Unfolding: InlineRule (2, True, False)
+                (\ (x :: Individual.Individual) (y :: Individual.Individual) ->
+                 case Individual.fitness x of wild { GHC.Types.F# x1 ->
+                 case Individual.fitness y of wild1 { GHC.Types.F# y1 ->
+                 case GHC.Prim.tagToEnum#
+                        @ GHC.Types.Bool
+                        (GHC.Prim.leFloat# x1 y1) of wild2 {
+                   GHC.Types.False -> x GHC.Types.True -> y } } }) -}
+5b72c6e67cfc581a821b9096a4253857
+  $fOrdIndividual_$cmin ::
+    Individual.Individual
+    -> Individual.Individual -> Individual.Individual
+  {- Arity: 2,
+     Strictness: <L,U(U,U(U),U(U),U(U))><L,U(U,U(U),U(U),U(U))>,
+     Unfolding: InlineRule (2, True, False)
+                (\ (x :: Individual.Individual) (y :: Individual.Individual) ->
+                 case Individual.fitness x of wild { GHC.Types.F# x1 ->
+                 case Individual.fitness y of wild1 { GHC.Types.F# y1 ->
+                 case GHC.Prim.tagToEnum#
+                        @ GHC.Types.Bool
+                        (GHC.Prim.leFloat# x1 y1) of wild2 {
+                   GHC.Types.False -> y GHC.Types.True -> x } } }) -}
+5b72c6e67cfc581a821b9096a4253857
+  $fShowIndividual :: GHC.Show.Show Individual.Individual
+  DFunId
+  {- Strictness: m, Inline: CONLIKE,
+     Unfolding: DFun:.
+                  @ Individual.Individual
+                  Individual.$fShowIndividual_$cshowsPrec
+                  Individual.$fShowIndividual_$cshow
+                  Individual.$fShowIndividual_$cshowList -}
+5b72c6e67cfc581a821b9096a4253857
+  $fShowIndividual1 :: Individual.Individual -> GHC.Show.ShowS
+  {- Arity: 1, Strictness: <S,1*U(U(U),1*U(U),1*U(U),1*U(U))>,
+     Unfolding: (\ (w :: Individual.Individual) ->
+                 case w of ww { Individual.I ww1 ww2 ww3 ww4 ->
+                 Individual.$w$cshowsPrec 0# ww1 ww2 ww3 ww4 }) -}
+148e009a01cb52c6fa97f2bae3398cd4
+  $fShowIndividual2 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("I "#) -}
+8095b0bce0d007b4123ba207673cae28
+  $fShowIndividual3 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 11#) -}
+880cbb988f6c6900dd7eb2f52349562c
+  $fShowIndividual4 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 0#) -}
+5b72c6e67cfc581a821b9096a4253857
+  $fShowIndividual_$cshow :: Individual.Individual -> GHC.Base.String
+  {- Arity: 1, Strictness: <S,1*U(U(U),1*U(U),1*U(U),1*U(U))>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (x :: Individual.Individual) ->
+                 Individual.$fShowIndividual_$cshowsPrec
+                   Individual.$fShowIndividual4
+                   x
+                   (GHC.Types.[] @ GHC.Types.Char)) -}
+5b72c6e67cfc581a821b9096a4253857
+  $fShowIndividual_$cshowList ::
+    [Individual.Individual] -> GHC.Show.ShowS
+  {- Arity: 2,
+     Unfolding: (GHC.Show.showList__
+                   @ Individual.Individual
+                   Individual.$fShowIndividual1) -}
+5b72c6e67cfc581a821b9096a4253857
+  $fShowIndividual_$cshowsPrec ::
+    GHC.Types.Int -> Individual.Individual -> GHC.Show.ShowS
+  {- Arity: 2,
+     Strictness: <S(S),1*U(U)><S,1*U(U(U),1*U(U),1*U(U),1*U(U))>,
+     Inline: [0],
+     Unfolding: InlineRule (2, True, False)
+                (\ (w :: GHC.Types.Int) (w1 :: Individual.Individual) ->
+                 case w of ww { GHC.Types.I# ww1 ->
+                 case w1 of ww2 { Individual.I ww3 ww4 ww5 ww6 ->
+                 Individual.$w$cshowsPrec ww1 ww3 ww4 ww5 ww6 } }) -}
+39b3e773b8e23346c92f9f816a226b6c
+  $tc'I :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   18280249393174591265##
+                   13520977496998698874##
+                   Individual.$trModule
+                   Individual.$tc'I2
+                   0#
+                   Individual.$tc'I1) -}
+01988073e9ca1c88080016ec26db3c01
+  $tc'I1 :: GHC.Types.KindRep
+  {- HasNoCafRefs, Strictness: m4, Inline: [~] -}
+c61dba4041f87755b793572784c2855f
+  $tc'I2 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Individual.$tc'I3) -}
+70208e7e555772bb2f48c445ada0cecd
+  $tc'I3 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("'I"#) -}
+53de9dd2c6caa0559f2b1ac71fd107b1
+  $tcIndividual :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   18299868212281047161##
+                   13866871072269177767##
+                   Individual.$trModule
+                   Individual.$trModule1
+                   0#
+                   GHC.Types.krep$*) -}
+8ff10ce89666e4afd388ab5323962650
+  $trModule :: GHC.Types.Module
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.Module
+                   Individual.$trModule3
+                   Individual.$trModule1) -}
+fdfec7da172afd12bdfc15abfaf669c4
+  $trModule1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Individual.$trModule2) -}
+ab5c7fcb4c2991480f1129dfbf3df523
+  $trModule2 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("Individual"#) -}
+58fa4a54b6aeb4082b934ba1d4d52e0c
+  $trModule3 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Individual.$trModule4) -}
+f2b127d6193a1931ebf75c8902e1dce1
+  $trModule4 :: GHC.Prim.Addr#
+  {- HasNoCafRefs,
+     Unfolding: ("record-linkage-0.1.0.0-GiD3fk8Q0aPH6dRqt0OdA7"#) -}
+00ef12ba69aa0c9a695f2051c2277755
+  $w$cshowsPrec ::
+    GHC.Prim.Int#
+    -> GHC.Types.Int
+    -> GHC.Types.Float
+    -> GHC.Types.Float
+    -> GHC.Types.Float
+    -> GHC.Show.ShowS
+  {- Arity: 5,
+     Strictness: <S,U><L,U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)>,
+     Inline: [0],
+     Unfolding: (\ (ww :: GHC.Prim.Int#)
+                   (ww1 :: GHC.Types.Int)
+                   (ww2 :: GHC.Types.Float)
+                   (ww3 :: GHC.Types.Float)
+                   (ww4 :: GHC.Types.Float) ->
+                 let {
+                   f :: GHC.Base.String -> GHC.Base.String
+                   = case ww2 of ww5 { GHC.Types.F# ww6 ->
+                     GHC.Float.$w$sshowSignedFloat1
+                       GHC.Float.$fShowFloat2
+                       Individual.$fShowIndividual3
+                       ww6 }
+                 } in
+                 let {
+                   f1 :: GHC.Base.String -> GHC.Base.String
+                   = case ww3 of ww5 { GHC.Types.F# ww6 ->
+                     GHC.Float.$w$sshowSignedFloat1
+                       GHC.Float.$fShowFloat2
+                       Individual.$fShowIndividual3
+                       ww6 }
+                 } in
+                 let {
+                   g :: GHC.Base.String -> GHC.Base.String
+                   = case ww4 of ww5 { GHC.Types.F# ww6 ->
+                     GHC.Float.$w$sshowSignedFloat1
+                       GHC.Float.$fShowFloat2
+                       Individual.$fShowIndividual3
+                       ww6 }
+                 } in
+                 let {
+                   p :: GHC.Show.ShowS {- Arity: 1, Strictness: <L,U> -}
+                   = \ (x :: GHC.Base.String) ->
+                     GHC.CString.unpackAppendCString#
+                       Individual.$fShowIndividual2
+                       (case ww1 of ww5 { GHC.Types.I# ww6 ->
+                        case GHC.Show.$wshowSignedInt
+                               11#
+                               ww6
+                               (GHC.Types.:
+                                  @ GHC.Types.Char
+                                  GHC.Show.showSpace1
+                                  (f (GHC.Types.:
+                                        @ GHC.Types.Char
+                                        GHC.Show.showSpace1
+                                        (f1
+                                           (GHC.Types.:
+                                              @ GHC.Types.Char
+                                              GHC.Show.showSpace1
+                                              (g x)))))) of ww7 { (#,#) ww8 ww9 ->
+                        GHC.Types.: @ GHC.Types.Char ww8 ww9 } })
+                 } in
+                 case GHC.Prim.tagToEnum#
+                        @ GHC.Types.Bool
+                        (GHC.Prim.>=# ww 11#) of wild {
+                   GHC.Types.False -> p
+                   GHC.Types.True
+                   -> \ (x :: GHC.Base.String) ->
+                      GHC.Types.:
+                        @ GHC.Types.Char
+                        GHC.Show.$fShow(,)4
+                        (p (GHC.Types.: @ GHC.Types.Char GHC.Show.$fShow(,)2 x)) }) -}
+bcfd2d505f1edca5d34171fdc373a44f
+  $wfalsePositives ::
+    [(GHC.Types.Int, GHC.Types.Int)] -> GHC.Prim.Int#
+  {- Arity: 1, Strictness: <S,1*U>, Inline: [0] -}
+5b72c6e67cfc581a821b9096a4253857
+  $wfitness :: Individual.Individual -> GHC.Prim.Float#
+  {- Arity: 1, Strictness: <L,1*U(A,U(U),U(U),U(U))>, Inline: [0],
+     Unfolding: (\ (w :: Individual.Individual) ->
+                 let {
+                   edges :: [(GHC.Types.Int, GHC.Types.Int)]
+                   = GHC.List.filter
+                       @ (GHC.Types.Int, GHC.Types.Int)
+                       Individual.fitness4
+                       (Individual.genEdges' w Individual.fitness3)
+                 } in
+                 case Individual.$wtruePositives edges of ww { DEFAULT ->
+                 case Individual.fitness2 of wild { GHC.Types.I# x ->
+                 case Individual.fitness1 of wild1 { GHC.Types.I# x1 ->
+                 case Individual.fitness_x of wild2 { GHC.Types.I# x2 ->
+                 case Individual.$wfalsePositives edges of ww1 { DEFAULT ->
+                 let {
+                   x3 :: GHC.Prim.Float# = GHC.Prim.int2Float# ww
+                 } in
+                 let {
+                   y :: GHC.Prim.Float# = GHC.Prim.int2Float# (GHC.Prim.-# x ww)
+                 } in
+                 let {
+                   x4 :: GHC.Prim.Float#
+                   = GHC.Prim.int2Float#
+                       (GHC.Prim.-#
+                          (GHC.Prim.+# x1 (GHC.Prim.*# (GHC.Prim.*# x2 2#) x))
+                          ww1)
+                 } in
+                 case GHC.Prim.tagToEnum#
+                        @ GHC.Types.Bool
+                        (GHC.Prim.eqFloat#
+                           (GHC.Prim.timesFloat#
+                              (GHC.Prim.plusFloat# x3 y)
+                              (GHC.Prim.plusFloat# x4 x3))
+                           0.0#) of wild3 {
+                   GHC.Types.False
+                   -> GHC.Prim.divideFloat#
+                        (GHC.Prim.timesFloat# x4 x3)
+                        (GHC.Prim.timesFloat#
+                           (GHC.Prim.plusFloat# x3 y)
+                           (GHC.Prim.plusFloat# x4 x3))
+                   GHC.Types.True -> 0.0# } } } } } }) -}
+cf53ebc29a974d7395f15fd091f9d22a
+  $wtruePositives ::
+    [(GHC.Types.Int, GHC.Types.Int)] -> GHC.Prim.Int#
+  {- Arity: 1, Strictness: <S,1*U>, Inline: [0] -}
+e2cdd79b612592b9cae8a2d579970e58
+  $wunsafeDrop :: GHC.Prim.Int# -> [a1] -> [a1]
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,1*U><S,1*U>,
+     Inline: [0] -}
+69e6d6f84d2e5516c834a4f981618a40
+  $wunsafeDrop1 :: GHC.Prim.Int# -> [a1] -> [a1]
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,1*U><S,1*U>,
+     Inline: [0] -}
+5b72c6e67cfc581a821b9096a4253857
+  data Individual
+    = I GHC.Types.Int GHC.Types.Float GHC.Types.Float GHC.Types.Float
+d77498d79f74f75cc3de77b6f09a345e
+  allFitness :: [Individual.Individual] -> [GHC.Types.Float]
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (l :: [Individual.Individual]) ->
+                 GHC.Base.build
+                   @ GHC.Types.Float
+                   (\ @ b1
+                      (c :: GHC.Types.Float -> b1 -> b1)[OneShot]
+                      (n :: b1)[OneShot] ->
+                    GHC.Base.foldr
+                      @ Individual.Individual
+                      @ b1
+                      (GHC.Base.mapFB
+                         @ GHC.Types.Float
+                         @ b1
+                         @ Individual.Individual
+                         c
+                         Individual.fitness)
+                      n
+                      l)) -}
+2d734b69eba7c8b5e93bfe8966fff9c9
+  cross ::
+    Individual.Individual
+    -> Individual.Individual -> Individual.Individual
+  {- Arity: 2, HasNoCafRefs,
+     Strictness: <S,1*U(U,1*U(U),1*U(U),1*U(U))><S,1*U(A,1*U(U),1*U(U),1*U(U))>m,
+     Inline: [0],
+     Unfolding: InlineRule (2, True, False)
+                (\ (w :: Individual.Individual) (w1 :: Individual.Individual) ->
+                 case w of ww { Individual.I ww1 ww2 ww3 ww4 ->
+                 case w1 of ww5 { Individual.I ww6 ww7 ww8 ww9 ->
+                 Individual.I
+                   ww1
+                   (case ww2 of wild2 { GHC.Types.F# x ->
+                    case ww7 of wild3 { GHC.Types.F# y ->
+                    GHC.Types.F#
+                      (GHC.Prim.divideFloat# (GHC.Prim.plusFloat# x y) 2.0#) } })
+                   (case ww3 of wild2 { GHC.Types.F# x ->
+                    case ww8 of wild3 { GHC.Types.F# y ->
+                    GHC.Types.F#
+                      (GHC.Prim.divideFloat# (GHC.Prim.plusFloat# x y) 2.0#) } })
+                   (case ww4 of wild2 { GHC.Types.F# x ->
+                    case ww9 of wild3 { GHC.Types.F# y ->
+                    GHC.Types.F#
+                      (GHC.Prim.divideFloat# (GHC.Prim.plusFloat# x y) 2.0#) } }) } }) -}
+f3ebfd716fecb1b8164536e34f97b9ce
+  crossBestFit :: [Individual.Individual] -> [Individual.Individual]
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U> -}
+5b72c6e67cfc581a821b9096a4253857
+  fitness :: Individual.Individual -> GHC.Types.Float
+  {- Arity: 1, Strictness: <L,1*U(A,U(U),U(U),U(U))>m, Inline: [0],
+     Unfolding: InlineRule (1, True, False)
+                (\ (w :: Individual.Individual) ->
+                 case Individual.$wfitness w of ww { DEFAULT ->
+                 GHC.Types.F# ww }) -}
+9e3ab94edeaf82101c61b2e1a9d3eaf3
+  fitness1 :: GHC.Types.Int
+  {- Unfolding: (case Individual.fitness_x of wild { GHC.Types.I# x ->
+                 GHC.Types.I#
+                   (GHC.Prim.quotInt# (GHC.Prim.*# x (GHC.Prim.-# x 1#)) 2#) }) -}
+e39f7c73ea261d98e6dd8265c0b13747
+  fitness2 :: GHC.Types.Int
+  {- Unfolding: (case GHC.List.$wlenAcc
+                        @ (GHC.Types.Int, GHC.Types.Int)
+                        Record.finalSet
+                        0# of ww2 { DEFAULT ->
+                 GHC.Types.I# ww2 }) -}
+0e51b30123740c16e50aed85551e2a8d
+  fitness3 :: [(Record.Record, Record.Record)]
+  {- Unfolding: (Individual.fitness_go Record.rawSet) -}
+2046bb86de50d93be40423c8f11565f3
+  fitness4 :: (GHC.Types.Int, GHC.Types.Int) -> GHC.Types.Bool
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S(S(S)S(S)),1*U(1*U(U),1*U(U))>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (x :: (GHC.Types.Int, GHC.Types.Int)) ->
+                 case x of wild { (,) x1 ds1 -> GHC.Classes.ltInt x1 ds1 }) -}
+03aa60f0c81c61467b9db2155907437a
+  fitness_go :: [Record.Record] -> [(Record.Record, Record.Record)]
+  {- Arity: 1, Strictness: <S,1*U> -}
+f000211343a2e0310263ff0b852fb9ce
+  fitness_x :: GHC.Types.Int
+  {- Unfolding: (case GHC.List.$wlenAcc
+                        @ GHC.Types.Int
+                        Record.singles
+                        0# of ww2 { DEFAULT ->
+                 GHC.Types.I# ww2 }) -}
+5b72c6e67cfc581a821b9096a4253857
+  genEdges' ::
+    Individual.Individual
+    -> [(Record.Record, Record.Record)]
+    -> [(GHC.Types.Int, GHC.Types.Int)]
+  {- Arity: 2, Strictness: <L,1*U(A,U(U),U(U),U(U))><S,1*U> -}
+cd6001aeee8c6a278593276a8e99cf5e
+  newIndividual ::
+    GHC.Types.Int
+    -> GHC.Types.Float
+    -> GHC.Types.Float
+    -> GHC.Types.Float
+    -> Individual.Individual
+  {- Arity: 4, HasNoCafRefs, Strictness: <L,U><L,U><L,U><L,U>m,
+     Unfolding: InlineRule (0, True, True) Individual.I -}
+c6c328d62647ac152792960a026aa657
+  similarity ::
+    Individual.Individual -> Individual.Individual -> GHC.Types.Float
+  {- Arity: 2, HasNoCafRefs,
+     Strictness: <S(LS(S)S(S)S(S)),1*U(A,1*U(U),1*U(U),1*U(U))><S(LS(S)S(S)S(S)),1*U(A,1*U(U),1*U(U),1*U(U))>m,
+     Inline: [0],
+     Unfolding: InlineRule (2, True, False)
+                (\ (w :: Individual.Individual) (w1 :: Individual.Individual) ->
+                 case w of ww { Individual.I ww1 ww2 ww3 ww4 ->
+                 case ww2 of ww5 { GHC.Types.F# ww6 ->
+                 case ww3 of ww7 { GHC.Types.F# ww8 ->
+                 case ww4 of ww9 { GHC.Types.F# ww10 ->
+                 case w1 of ww11 { Individual.I ww12 ww13 ww14 ww15 ->
+                 case ww13 of ww16 { GHC.Types.F# ww17 ->
+                 case ww14 of ww18 { GHC.Types.F# ww19 ->
+                 case ww15 of ww20 { GHC.Types.F# ww21 ->
+                 GHC.Types.F#
+                   (GHC.Prim.divideFloat#
+                      (GHC.Prim.minusFloat#
+                         3.0#
+                         (GHC.Prim.plusFloat#
+                            (GHC.Prim.plusFloat#
+                               (GHC.Prim.fabsFloat# (GHC.Prim.minusFloat# ww6 ww17))
+                               (GHC.Prim.fabsFloat# (GHC.Prim.minusFloat# ww8 ww19)))
+                            (GHC.Prim.fabsFloat# (GHC.Prim.minusFloat# ww10 ww21))))
+                      3.0#) } } } } } } } }) -}
+d1d82ea37bd45f0d53d2497e1aa63b67
+  sortByFitness :: [Individual.Individual] -> [Individual.Individual]
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (l :: [Individual.Individual]) ->
+                 Data.OldList.sortBy
+                   @ Individual.Individual
+                   Individual.$fOrdIndividual_$ccompare
+                   l) -}
+5a69e05f06330cc255557f70ea114d20
+  takeBest :: [Individual.Individual] -> [Individual.Individual]
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,U>,
+     Unfolding: (\ (as :: [Individual.Individual]) ->
+                 case GHC.List.$wlenAcc
+                        @ Individual.Individual
+                        as
+                        0# of ww2 { DEFAULT ->
+                 let {
+                   ww4 :: GHC.Prim.Int# = GHC.Prim.quotInt# (GHC.Prim.*# 95# ww2) 100#
+                 } in
+                 let {
+                   best :: [Individual.Individual]
+                   = case GHC.Prim.tagToEnum#
+                            @ GHC.Types.Bool
+                            (GHC.Prim.<=# ww4 0#) of wild {
+                       GHC.Types.False
+                       -> Individual.$wunsafeDrop1 @ Individual.Individual ww4 as
+                       GHC.Types.True -> as }
+                 } in
+                 case GHC.List.$wlenAcc
+                        @ Individual.Individual
+                        best
+                        0# of ww1 { DEFAULT ->
+                 let {
+                   ww3 :: GHC.Prim.Int# = GHC.Prim.quotInt# ww2 2#
+                 } in
+                 let {
+                   avg :: [Individual.Individual]
+                   = case GHC.Prim.tagToEnum#
+                            @ GHC.Types.Bool
+                            (GHC.Prim.<=# ww3 0#) of wild {
+                       GHC.Types.False
+                       -> Individual.crossBestFit
+                            (Individual.$wunsafeDrop @ Individual.Individual ww3 as)
+                       GHC.Types.True -> Individual.crossBestFit as }
+                 } in
+                 case GHC.List.$wlenAcc
+                        @ Individual.Individual
+                        avg
+                        0# of ww5 { DEFAULT ->
+                 let {
+                   y :: GHC.Prim.Int# = GHC.Prim.-# (GHC.Prim.-# ww2 ww1) ww5
+                 } in
+                 let {
+                   n :: [Individual.Individual]
+                   = GHC.Base.++ @ Individual.Individual avg best
+                 } in
+                 case GHC.Prim.tagToEnum#
+                        @ GHC.Types.Bool
+                        (GHC.Prim.<# 0# y) of wild {
+                   GHC.Types.False -> n
+                   GHC.Types.True
+                   -> letrec {
+                        $wgo :: [Individual.Individual]
+                                -> GHC.Prim.Int# -> [Individual.Individual]
+                          {- Arity: 2, Strictness: <S,1*U><L,1*U>, Inline: [0] -}
+                        = \ (w :: [Individual.Individual]) (ww :: GHC.Prim.Int#) ->
+                          case w of wild1 {
+                            [] -> n
+                            : y1 ys
+                            -> case ww of ds1 {
+                                 DEFAULT
+                                 -> GHC.Types.:
+                                      @ Individual.Individual
+                                      y1
+                                      ($wgo ys (GHC.Prim.-# ds1 1#))
+                                 1# -> GHC.Types.: @ Individual.Individual y1 n } }
+                      } in
+                      $wgo
+                        (GHC.List.reverse1
+                           @ Individual.Individual
+                           as
+                           (GHC.Types.[] @ Individual.Individual))
+                        y } } } }) -}
+f3afa7bd74df35706bfbc5f3239480a0
+  toList :: [Individual.Individual]
+  {- Unfolding: (Individual.toList_go
+                   (GHC.Real.numericEnumFromTo
+                      @ GHC.Types.Float
+                      GHC.Classes.$fOrdFloat
+                      GHC.Float.$fFractionalFloat
+                      Individual.toList2
+                      Individual.toList1)) -}
+a814cd6a5af46e2b715ad071f76a5229
+  toList1 :: GHC.Types.Float
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.F# 2.0#) -}
+2d21943f2b70dedcc822978bd43f11ac
+  toList2 :: GHC.Types.Float
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.F# 0.0#) -}
+894cd62c34f4e43838f9cd048315ef45
+  toList_go :: [GHC.Types.Float] -> [Individual.Individual]
+  {- Arity: 1, Strictness: <S,1*U> -}
+instance [safe] GHC.Classes.Eq [Individual.Individual]
+  = Individual.$fEqIndividual
+instance [safe] GHC.Classes.Ord [Individual.Individual]
+  = Individual.$fOrdIndividual
+instance [safe] GHC.Show.Show [Individual.Individual]
+  = Individual.$fShowIndividual
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: safe
+require own pkg trusted: False
+

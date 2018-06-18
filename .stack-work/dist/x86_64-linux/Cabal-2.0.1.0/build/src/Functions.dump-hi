@@ -1,0 +1,343 @@
+
+==================== FINAL INTERFACE ====================
+2018-06-18 02:50:24.150824 UTC
+
+interface record-linkage-0.1.0.0-GiD3fk8Q0aPH6dRqt0OdA7:Functions 8022
+  interface hash: 7936b5858b153fb0d37947a32eb08117
+  ABI hash: aca09d271839b442935a3485b661b551
+  export-list hash: 5651e587eaf62045bcbe698cd77d5b3c
+  orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
+  flag hash: d3f9096bac2e1e79f6ff76d0840aa157
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  Functions.editDistanceFactor
+  Functions.haversineFactor
+  Functions.jaroWinklerFactor
+module dependencies: Record
+package dependencies: base-4.10.1.0* ghc-prim-0.5.1.1
+                      integer-gmp-1.0.1.0
+orphans: base-4.10.1.0:GHC.Float base-4.10.1.0:GHC.Base
+family instance modules: base-4.10.1.0:Control.Applicative
+                         base-4.10.1.0:Data.Either base-4.10.1.0:Data.Functor.Const
+                         base-4.10.1.0:Data.Functor.Identity base-4.10.1.0:Data.Monoid
+                         base-4.10.1.0:Data.Type.Equality base-4.10.1.0:GHC.Generics
+                         base-4.10.1.0:GHC.IO.Exception base-4.10.1.0:GHC.TypeLits
+                         base-4.10.1.0:GHC.TypeNats
+import  -/  base-4.10.1.0:Control.Arrow b4ff99f516cf3ba87a1e4985dc7f496f
+import  -/  base-4.10.1.0:Data.Foldable 9ed87455d68e87ff2b5b8725eae9897e
+import  -/  base-4.10.1.0:GHC.Base 782fd99b5e36f3698a26179a49afca64
+import  -/  base-4.10.1.0:GHC.Float 28e3bf9e258278ac8084e9cab43fd542
+import  -/  base-4.10.1.0:GHC.List e3060fbeb44ce0038e6b4dedf2dd9cf1
+import  -/  base-4.10.1.0:GHC.Num 6e1dc5d36d99a802edb39b92bb1923b8
+import  -/  base-4.10.1.0:GHC.Real 3c62834bc25e762eabc44149c4cc142d
+import  -/  base-4.10.1.0:Prelude 31945b7d0084063347fc52506d3a4020
+import  -/  ghc-prim-0.5.1.1:GHC.Classes 93e2660065dce9329577e83d76d8f0d4
+import  -/  Record 3068bd0f08c72ac399f9c89c2915badc
+  exports: 31dbb412610e8c521cd7b1ae7dfff739
+  Record 4f3f9108406a0a09e89d65bee1416da6
+  addr 317590f25ef257f3d62c06f7e3410648
+  loc af60f35b721d837b6529281636457db9
+fa2485191a95c83ebfc7f72ae4c221b7
+  $trModule :: GHC.Types.Module
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.Module
+                   Functions.$trModule3
+                   Functions.$trModule1) -}
+b7b10d37f81d231952c7027766df10c4
+  $trModule1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Functions.$trModule2) -}
+dab4317f4dd6509dfeaa5c57e15f4830
+  $trModule2 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("Functions"#) -}
+8fb16d2c316637728a2d8351b36320eb
+  $trModule3 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Functions.$trModule4) -}
+5f748aab3c3afa11a3dd9b1d1ab7b298
+  $trModule4 :: GHC.Prim.Addr#
+  {- HasNoCafRefs,
+     Unfolding: ("record-linkage-0.1.0.0-GiD3fk8Q0aPH6dRqt0OdA7"#) -}
+37f280c3bb262c479ff76a054797376a
+  $weditDistanceFactor ::
+    GHC.Base.String -> GHC.Base.String -> GHC.Prim.Float#
+  {- Arity: 2, Strictness: <S,U><S,U>, Inline: [0],
+     Unfolding: (\ (ww :: GHC.Base.String) (ww1 :: GHC.Base.String) ->
+                 case GHC.List.$wlenAcc @ GHC.Types.Char ww 0# of ww2 { DEFAULT ->
+                 case GHC.List.$wlenAcc @ GHC.Types.Char ww1 0# of ww3 { DEFAULT ->
+                 letrec {
+                   mainDiag :: [GHC.Types.Int]
+                   = Functions.editDistanceFactor_doDiag
+                       ww
+                       ww1
+                       Functions.editDistanceFactor_firstelt
+                       (GHC.List.head @ [GHC.Types.Int] uppers)
+                       (case lowers of wild {
+                          [] -> GHC.List.badHead @ [GHC.Types.Int] : x ds1 -> x })
+                   mainDiag1 :: [GHC.Types.Int]
+                   = GHC.Types.:
+                       @ GHC.Types.Int
+                       Functions.editDistanceFactor_firstelt
+                       mainDiag
+                   lowers :: [[GHC.Types.Int]]
+                   = Functions.editDistanceFactor_eachDiag
+                       ww1
+                       ww
+                       (GHC.Types.: @ [GHC.Types.Int] mainDiag1 lowers)
+                   uppers :: [[GHC.Types.Int]]
+                   = Functions.editDistanceFactor_eachDiag
+                       ww
+                       ww1
+                       (GHC.Types.: @ [GHC.Types.Int] mainDiag1 uppers)
+                 } in
+                 case GHC.Prim.-# ww2 ww3 of wild {
+                   DEFAULT
+                   -> case GHC.Prim.tagToEnum#
+                             @ GHC.Types.Bool
+                             (GHC.Prim.># wild 0#) of wild1 {
+                        GHC.Types.False
+                        -> letrec {
+                             go1 :: [GHC.Types.Int] -> GHC.Types.Int -> GHC.Prim.Float#
+                               <join 2> {- Arity: 2, Strictness: <S,1*U><L,1*U(U)> -}
+                             = \ (ds :: [GHC.Types.Int]) (eta :: GHC.Types.Int) ->
+                               case ds of wild2 {
+                                 []
+                                 -> case eta of wild3 { GHC.Types.I# i ->
+                                    let {
+                                      x1 :: GHC.Prim.Float# = GHC.Prim.int2Float# ww2
+                                    } in
+                                    let {
+                                      y1 :: GHC.Prim.Float# = GHC.Prim.int2Float# ww3
+                                    } in
+                                    case GHC.Prim.tagToEnum#
+                                           @ GHC.Types.Bool
+                                           (GHC.Prim.leFloat# x1 y1) of wild4 {
+                                      GHC.Types.False
+                                      -> case GHC.Prim.divideFloat#
+                                                (GHC.Prim.int2Float# i)
+                                                x1 of wild5 { DEFAULT ->
+                                         GHC.Prim.minusFloat# 1.0# wild5 }
+                                      GHC.Types.True
+                                      -> case GHC.Prim.divideFloat#
+                                                (GHC.Prim.int2Float# i)
+                                                y1 of wild5 { DEFAULT ->
+                                         GHC.Prim.minusFloat# 1.0# wild5 } } }
+                                 : y ys -> go1 ys y }
+                           } in
+                           go1
+                             (GHC.List.$w!! @ [GHC.Types.Int] uppers (GHC.Prim.-# -1# wild))
+                             (GHC.List.lastError @ GHC.Types.Int)
+                        GHC.Types.True
+                        -> letrec {
+                             go1 :: [GHC.Types.Int] -> GHC.Types.Int -> GHC.Prim.Float#
+                               <join 2> {- Arity: 2, Strictness: <S,1*U><L,1*U(U)> -}
+                             = \ (ds :: [GHC.Types.Int]) (eta :: GHC.Types.Int) ->
+                               case ds of wild2 {
+                                 []
+                                 -> case eta of wild3 { GHC.Types.I# i ->
+                                    let {
+                                      x1 :: GHC.Prim.Float# = GHC.Prim.int2Float# ww2
+                                    } in
+                                    let {
+                                      y1 :: GHC.Prim.Float# = GHC.Prim.int2Float# ww3
+                                    } in
+                                    case GHC.Prim.tagToEnum#
+                                           @ GHC.Types.Bool
+                                           (GHC.Prim.leFloat# x1 y1) of wild4 {
+                                      GHC.Types.False
+                                      -> case GHC.Prim.divideFloat#
+                                                (GHC.Prim.int2Float# i)
+                                                x1 of wild5 { DEFAULT ->
+                                         GHC.Prim.minusFloat# 1.0# wild5 }
+                                      GHC.Types.True
+                                      -> case GHC.Prim.divideFloat#
+                                                (GHC.Prim.int2Float# i)
+                                                y1 of wild5 { DEFAULT ->
+                                         GHC.Prim.minusFloat# 1.0# wild5 } } }
+                                 : y ys -> go1 ys y }
+                           } in
+                           go1
+                             (GHC.List.$w!! @ [GHC.Types.Int] lowers (GHC.Prim.-# wild 1#))
+                             (GHC.List.lastError @ GHC.Types.Int) }
+                   0#
+                   -> letrec {
+                        go1 :: [GHC.Types.Int] -> GHC.Types.Int -> GHC.Prim.Float#
+                          <join 2> {- Arity: 2, Strictness: <S,1*U><L,1*U(U)> -}
+                        = \ (ds :: [GHC.Types.Int]) (eta :: GHC.Types.Int) ->
+                          case ds of wild1 {
+                            []
+                            -> case eta of wild2 { GHC.Types.I# i ->
+                               let {
+                                 x1 :: GHC.Prim.Float# = GHC.Prim.int2Float# ww2
+                               } in
+                               let {
+                                 y1 :: GHC.Prim.Float# = GHC.Prim.int2Float# ww3
+                               } in
+                               case GHC.Prim.tagToEnum#
+                                      @ GHC.Types.Bool
+                                      (GHC.Prim.leFloat# x1 y1) of wild3 {
+                                 GHC.Types.False
+                                 -> case GHC.Prim.divideFloat#
+                                           (GHC.Prim.int2Float# i)
+                                           x1 of wild4 { DEFAULT ->
+                                    GHC.Prim.minusFloat# 1.0# wild4 }
+                                 GHC.Types.True
+                                 -> case GHC.Prim.divideFloat#
+                                           (GHC.Prim.int2Float# i)
+                                           y1 of wild4 { DEFAULT ->
+                                    GHC.Prim.minusFloat# 1.0# wild4 } } }
+                            : y ys -> go1 ys y }
+                      } in
+                      go1 mainDiag1 (GHC.List.lastError @ GHC.Types.Int) } } }) -}
+31e6ab7d8c0e513db8f6affe683c62c1
+  $whaversineFactor ::
+    GHC.Prim.Float#
+    -> GHC.Prim.Float#
+    -> GHC.Prim.Float#
+    -> GHC.Prim.Float#
+    -> GHC.Prim.Float#
+  {- Arity: 4, Strictness: <S,U><S,U><S,U><S,U>, Inline: [0],
+     Unfolding: (\ (ww :: GHC.Prim.Float#)
+                   (ww1 :: GHC.Prim.Float#)
+                   (ww2 :: GHC.Prim.Float#)
+                   (ww3 :: GHC.Prim.Float#) ->
+                 let {
+                   x :: GHC.Prim.Float#
+                   = GHC.Prim.divideFloat#
+                       (GHC.Prim.timesFloat# 3.1415927# ww2)
+                       180.0#
+                 } in
+                 let {
+                   y :: GHC.Prim.Float#
+                   = GHC.Prim.divideFloat# (GHC.Prim.timesFloat# 3.1415927# ww) 180.0#
+                 } in
+                 let {
+                   x1 :: GHC.Prim.Float#
+                   = GHC.Prim.sinFloat#
+                       (GHC.Prim.divideFloat# (GHC.Prim.minusFloat# x y) 2.0#)
+                 } in
+                 let {
+                   x2 :: GHC.Prim.Float#
+                   = GHC.Prim.sinFloat#
+                       (GHC.Prim.divideFloat#
+                          (GHC.Prim.minusFloat#
+                             (GHC.Prim.divideFloat#
+                                (GHC.Prim.timesFloat# 3.1415927# ww3)
+                                180.0#)
+                             (GHC.Prim.divideFloat#
+                                (GHC.Prim.timesFloat# 3.1415927# ww1)
+                                180.0#))
+                          2.0#)
+                 } in
+                 let {
+                   y1 :: GHC.Prim.Float#
+                   = GHC.Prim.sqrtFloat#
+                       (GHC.Prim.plusFloat#
+                          (GHC.Prim.timesFloat# x1 x1)
+                          (GHC.Prim.timesFloat#
+                             (GHC.Prim.timesFloat#
+                                (GHC.Prim.cosFloat# y)
+                                (GHC.Prim.cosFloat# x))
+                             (GHC.Prim.timesFloat# x2 x2)))
+                 } in
+                 case GHC.Prim.tagToEnum#
+                        @ GHC.Types.Bool
+                        (GHC.Prim.leFloat# 1.0# y1) of wild2 {
+                   GHC.Types.False
+                   -> case GHC.Prim.asinFloat# y1 of wild3 { DEFAULT ->
+                      let {
+                        x3 :: GHC.Prim.Float# = GHC.Prim.timesFloat# 12742.0# wild3
+                      } in
+                      case GHC.Prim.tagToEnum#
+                             @ GHC.Types.Bool
+                             (GHC.Prim.geFloat# x3 1.0#) of wild {
+                        GHC.Types.False -> GHC.Prim.minusFloat# 1.0# x3
+                        GHC.Types.True -> 0.0# } }
+                   GHC.Types.True
+                   -> case Functions.haversineFactor1 of v { GHC.Types.F# v1 ->
+                      let {
+                        x3 :: GHC.Prim.Float# = GHC.Prim.timesFloat# 12742.0# v1
+                      } in
+                      case GHC.Prim.tagToEnum#
+                             @ GHC.Types.Bool
+                             (GHC.Prim.geFloat# x3 1.0#) of wild {
+                        GHC.Types.False -> GHC.Prim.minusFloat# 1.0# x3
+                        GHC.Types.True -> 0.0# } } }) -}
+e05b16660db730906023d0e4b11e8fb1
+  $wjaroWinklerFactor ::
+    GHC.Base.String -> Record.Record -> GHC.Prim.Float#
+  {- Arity: 2, Strictness: <S,1*U><L,1*U(A,A,A,1*U)>, Inline: [0] -}
+85573f5be708d04606f8654c6a9927fc
+  editDistanceFactor ::
+    Record.Record -> Record.Record -> GHC.Types.Float
+  {- Arity: 2,
+     Strictness: <S(LLLS),1*U(A,A,A,U)><S(LLLS),1*U(A,A,A,U)>m,
+     Inline: [0],
+     Unfolding: InlineRule (2, True, False)
+                (\ (w :: Record.Record) (w1 :: Record.Record) ->
+                 case w of ww { (,,,) ww1 ww2 ww3 ww4 ->
+                 case w1 of ww5 { (,,,) ww6 ww7 ww8 ww9 ->
+                 case Functions.$weditDistanceFactor ww4 ww9 of ww10 { DEFAULT ->
+                 GHC.Types.F# ww10 } } }) -}
+807fd6391959eb79f7746cb3e4ef6426
+  editDistanceFactor_doDiag ::
+    [GHC.Types.Char]
+    -> [GHC.Types.Char]
+    -> GHC.Types.Int
+    -> [GHC.Types.Int]
+    -> [GHC.Types.Int]
+    -> [GHC.Types.Int]
+  {- Arity: 5, Strictness: <S,1*U><L,1*U><L,1*U(U)><L,U><L,U> -}
+4ba0bd2649212188f4929e6286fcd35f
+  editDistanceFactor_eachDiag ::
+    [GHC.Types.Char]
+    -> [GHC.Types.Char] -> [[GHC.Types.Int]] -> [[GHC.Types.Int]]
+  {- Arity: 3, Strictness: <L,U><S,1*U><L,1*U> -}
+fbca046d4dca911d0640310f13fa8018
+  editDistanceFactor_firstelt :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 0#) -}
+1061cadada2454d246e2458b4796f07d
+  haversineFactor ::
+    Record.Record -> Record.Record -> GHC.Types.Float
+  {- Arity: 2,
+     Strictness: <S(LS(S)S(S)L),1*U(A,1*U(U),1*U(U),A)><S(LS(S)S(S)L),1*U(A,1*U(U),1*U(U),A)>m,
+     Inline: [0],
+     Unfolding: InlineRule (2, True, False)
+                (\ (w :: Record.Record) (w1 :: Record.Record) ->
+                 case w of ww { (,,,) ww1 ww2 ww3 ww4 ->
+                 case ww2 of ww5 { GHC.Types.F# ww6 ->
+                 case ww3 of ww7 { GHC.Types.F# ww8 ->
+                 case w1 of ww9 { (,,,) ww10 ww11 ww12 ww13 ->
+                 case ww11 of ww14 { GHC.Types.F# ww15 ->
+                 case ww12 of ww16 { GHC.Types.F# ww17 ->
+                 case Functions.$whaversineFactor
+                        ww6
+                        ww8
+                        ww15
+                        ww17 of ww18 { DEFAULT ->
+                 GHC.Types.F# ww18 } } } } } } }) -}
+e88423dba73019fd1358ed2d9dbcc2e7
+  haversineFactor1 :: GHC.Types.Float
+  {- Unfolding: (case GHC.Prim.asinFloat# 1.0# of v { DEFAULT ->
+                 GHC.Types.F# v }) -}
+3dcd009fbd19fb649b8d6e4a4a291744
+  jaroWinklerFactor ::
+    Record.Record -> Record.Record -> GHC.Types.Float
+  {- Arity: 2,
+     Strictness: <S(LLLS),1*U(A,A,A,1*U)><L,1*U(A,A,A,1*U)>m,
+     Inline: [0],
+     Unfolding: InlineRule (2, True, False)
+                (\ (w :: Record.Record) (w1 :: Record.Record) ->
+                 case w of ww { (,,,) ww1 ww2 ww3 ww4 ->
+                 case Functions.$wjaroWinklerFactor ww4 w1 of ww5 { DEFAULT ->
+                 GHC.Types.F# ww5 } }) -}
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: safe
+require own pkg trusted: False
+

@@ -1,0 +1,642 @@
+
+==================== FINAL INTERFACE ====================
+2018-06-18 02:50:23.746343 UTC
+
+interface record-linkage-0.1.0.0-GiD3fk8Q0aPH6dRqt0OdA7:Record 8022
+  interface hash: 93fd07e88790fd04508557a159cdf631
+  ABI hash: 3068bd0f08c72ac399f9c89c2915badc
+  export-list hash: 31dbb412610e8c521cd7b1ae7dfff739
+  orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
+  flag hash: d3f9096bac2e1e79f6ff76d0840aa157
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  Record.addr
+  Record.finalSet
+  Record.ind
+  Record.loc
+  Record.rawSet
+  Record.singles
+  Record.Record
+module dependencies:
+package dependencies: base-4.10.1.0* ghc-prim-0.5.1.1
+                      integer-gmp-1.0.1.0
+orphans: base-4.10.1.0:GHC.Float base-4.10.1.0:GHC.Base
+family instance modules: base-4.10.1.0:Control.Applicative
+                         base-4.10.1.0:Data.Either base-4.10.1.0:Data.Functor.Const
+                         base-4.10.1.0:Data.Functor.Identity base-4.10.1.0:Data.Monoid
+                         base-4.10.1.0:Data.Type.Equality base-4.10.1.0:GHC.Generics
+                         base-4.10.1.0:GHC.IO.Exception base-4.10.1.0:GHC.TypeLits
+                         base-4.10.1.0:GHC.TypeNats
+import  -/  base-4.10.1.0:GHC.Base 782fd99b5e36f3698a26179a49afca64
+import  -/  base-4.10.1.0:Prelude 31945b7d0084063347fc52506d3a4020
+43f914ead19d05412f727a438ae3c152
+  $trModule :: GHC.Types.Module
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.Module
+                   Record.$trModule3
+                   Record.$trModule1) -}
+29bdd9df020644eb84db47f62172fe7f
+  $trModule1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Record.$trModule2) -}
+b8594171e0926dac56f949de17b8efc2
+  $trModule2 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("Record"#) -}
+febe1a58f5673dd50bfcb53c7008db0c
+  $trModule3 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Record.$trModule4) -}
+6d3a1677f11531bd2602ef468463abcc
+  $trModule4 :: GHC.Prim.Addr#
+  {- HasNoCafRefs,
+     Unfolding: ("record-linkage-0.1.0.0-GiD3fk8Q0aPH6dRqt0OdA7"#) -}
+4f3f9108406a0a09e89d65bee1416da6
+  type Record =
+    (GHC.Types.Int, GHC.Types.Float, GHC.Types.Float, GHC.Base.String)
+317590f25ef257f3d62c06f7e3410648
+  addr :: Record.Record -> GHC.Base.String
+  {- Arity: 1, HasNoCafRefs, Strictness: <S(LLLS),1*U(A,A,A,1*U)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: (GHC.Types.Int, GHC.Types.Float, GHC.Types.Float,
+                           GHC.Base.String)) ->
+                 case ds of wild { (,,,) ds1 ds2 ds3 address -> address }) -}
+aff5e66cb01039a7ffcb9d3274fb1a1a
+  finalSet :: [(GHC.Types.Int, GHC.Types.Int)]
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ (GHC.Types.Int, GHC.Types.Int)
+                   Record.finalSet13
+                   Record.finalSet1) -}
+cd1c8c17bcfa5417a6e4823fd03d664d
+  finalSet1 :: [(GHC.Types.Int, GHC.Types.Int)]
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ (GHC.Types.Int, GHC.Types.Int)
+                   Record.finalSet10
+                   Record.finalSet2) -}
+47a00042d7e5b52d0288da99f4f25cd3
+  finalSet10 :: (GHC.Types.Int, GHC.Types.Int)
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: ((Record.finalSet12, Record.finalSet11)) -}
+bdaca10e5cd154b7a1ccd0ecef4b51ab
+  finalSet11 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 4#) -}
+c5a881c50639f0ad6f7e007780c92f26
+  finalSet12 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 3#) -}
+da49131ead86c93c1837ea3b2e9d3e16
+  finalSet13 :: (GHC.Types.Int, GHC.Types.Int)
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: ((Record.finalSet15, Record.finalSet14)) -}
+aa6b6bd29ea23a554555aa8e5152814c
+  finalSet14 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 2#) -}
+d51f385ebeac6c0f7bcde63d36faa529
+  finalSet15 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 1#) -}
+2fde03812e375418ea56d7881b0b297c
+  finalSet2 :: [(GHC.Types.Int, GHC.Types.Int)]
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ (GHC.Types.Int, GHC.Types.Int)
+                   Record.finalSet7
+                   Record.finalSet3) -}
+f109d7052e17f5bf78477ee9f792e530
+  finalSet3 :: [(GHC.Types.Int, GHC.Types.Int)]
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ (GHC.Types.Int, GHC.Types.Int)
+                   Record.finalSet4
+                   (GHC.Types.[] @ (GHC.Types.Int, GHC.Types.Int))) -}
+5a90b758fe159f51b1bbf667783fb369
+  finalSet4 :: (GHC.Types.Int, GHC.Types.Int)
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: ((Record.finalSet6, Record.finalSet5)) -}
+946c9138dc780614773089474a31fad9
+  finalSet5 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 8#) -}
+1c60968e8999673449d7cd2d0b03437b
+  finalSet6 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 7#) -}
+fe00964665272a6983fd46126edab0b9
+  finalSet7 :: (GHC.Types.Int, GHC.Types.Int)
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: ((Record.finalSet9, Record.finalSet8)) -}
+52d43c5318e40bea102632b92d11e0a1
+  finalSet8 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 6#) -}
+5cf3d31a27c6b586237ace57f6f06444
+  finalSet9 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 5#) -}
+a49857e0c144d43878dcb39695289512
+  ind :: Record.Record -> GHC.Types.Int
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S(SLLL),1*U(1*U(U),A,A,A)>m,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: (GHC.Types.Int, GHC.Types.Float, GHC.Types.Float,
+                           GHC.Base.String)) ->
+                 case ds of wild { (,,,) i ds1 ds2 ds3 -> i }) -}
+af60f35b721d837b6529281636457db9
+  loc :: Record.Record -> (GHC.Types.Float, GHC.Types.Float)
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U(A,U,U,A)>m,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: (GHC.Types.Int, GHC.Types.Float, GHC.Types.Float,
+                           GHC.Base.String)) ->
+                 case ds of wild { (,,,) ds1 lat lng ds2 -> (lat, lng) }) -}
+c07eae8230af1f4c5e0fe12166a4c109
+  rawSet :: [Record.Record]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ Record.Record
+                   Record.rawSet92
+                   Record.rawSet1) -}
+e07d51e3c262630c7b0a708a3aa4faf3
+  rawSet1 :: [Record.Record]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ Record.Record
+                   Record.rawSet87
+                   Record.rawSet2) -}
+8d9b892913ea56765988dee70466818b
+  rawSet10 :: [Record.Record]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ Record.Record
+                   Record.rawSet39
+                   Record.rawSet11) -}
+029025652093e4c3ba4157a2277f782d
+  rawSet11 :: [Record.Record]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ Record.Record
+                   Record.rawSet33
+                   Record.rawSet12) -}
+c089b0c545eefca45fa1725d8b8a2371
+  rawSet12 :: [Record.Record]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ Record.Record
+                   Record.rawSet27
+                   Record.rawSet13) -}
+2b7716fff4794b5fb523f8aa362c51ac
+  rawSet13 :: [Record.Record]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ Record.Record
+                   Record.rawSet21
+                   Record.rawSet14) -}
+fc358313c1ab82d86b8298d516bfdfab
+  rawSet14 :: [Record.Record]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ Record.Record
+                   Record.rawSet15
+                   (GHC.Types.[] @ Record.Record)) -}
+a728627d6e5f61e7081549b67478cff6
+  rawSet15 ::
+    (GHC.Types.Int, GHC.Types.Float, GHC.Types.Float, [GHC.Types.Char])
+  {- Strictness: m,
+     Unfolding: ((Record.rawSet20, Record.rawSet19, Record.rawSet18,
+                  Record.rawSet16)) -}
+36396650147464ebc98562d23498dd6c
+  rawSet16 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# Record.rawSet17) -}
+485e0f11f64f8e4631c422b79c127946
+  rawSet17 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("Av Guarapari, 466, Santa Amelia"#) -}
+ba36033876f914c1f4a7a619b9f1be37
+  rawSet18 :: GHC.Types.Float
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.F# -43.977535#) -}
+ddf91d647508abfbf22d64801ba3b966
+  rawSet19 :: GHC.Types.Float
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.F# -19.842924#) -}
+81ec15ea5f5c49a5e5a8cc28dadf7a3c
+  rawSet2 :: [Record.Record]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ Record.Record
+                   Record.rawSet82
+                   Record.rawSet3) -}
+d7d7a103822c62e8188c31382554f0d6
+  rawSet20 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 15#) -}
+8450ac22bc494d18d15f630dfbe976f4
+  rawSet21 ::
+    (GHC.Types.Int, GHC.Types.Float, GHC.Types.Float, [GHC.Types.Char])
+  {- Strictness: m,
+     Unfolding: ((Record.rawSet26, Record.rawSet25, Record.rawSet24,
+                  Record.rawSet22)) -}
+bd7fb8efe5efbc9fbc3969041e0de8ec
+  rawSet22 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# Record.rawSet23) -}
+6a9fd0468cb359b16ec21068d7ddb80c
+  rawSet23 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("Rua Onze, 71, Cascata"#) -}
+e4efa9cf36133e90a38a03d40b282b2d
+  rawSet24 :: GHC.Types.Float
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.F# -47.17251#) -}
+14a069c24dbcad7104b7015646690c1e
+  rawSet25 :: GHC.Types.Float
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.F# -22.727755#) -}
+e592c21065a328903fd948f8efe959e1
+  rawSet26 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 14#) -}
+090e3222ba0f2732b7635a811d2638de
+  rawSet27 ::
+    (GHC.Types.Int, GHC.Types.Float, GHC.Types.Float, [GHC.Types.Char])
+  {- Strictness: m,
+     Unfolding: ((Record.rawSet32, Record.rawSet31, Record.rawSet30,
+                  Record.rawSet28)) -}
+ca98507a79fa83d6291ca2287b177456
+  rawSet28 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# Record.rawSet29) -}
+1875d61ec6e014c3bb422c1c97aa750b
+  rawSet29 :: GHC.Prim.Addr#
+  {- HasNoCafRefs,
+     Unfolding: ("Alameda el corregidor cuadra 15, La Molina"#) -}
+cf4a97068950b54e6ce545af256956bc
+  rawSet3 :: [Record.Record]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ Record.Record
+                   Record.rawSet77
+                   Record.rawSet4) -}
+8395aad495a8f2e3e05deea7d2b6992d
+  rawSet30 :: GHC.Types.Float
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.F# -76.95082#) -}
+00ec973dc52c2d4232ff3b8c316c98f2
+  rawSet31 :: GHC.Types.Float
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.F# -12.098327#) -}
+5f556d434e13a39a131495c026afb6c7
+  rawSet32 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 13#) -}
+4fc9e8c07939bb4e6990e3d3a3e5423d
+  rawSet33 ::
+    (GHC.Types.Int, GHC.Types.Float, GHC.Types.Float, [GHC.Types.Char])
+  {- Strictness: m,
+     Unfolding: ((Record.rawSet38, Record.rawSet37, Record.rawSet36,
+                  Record.rawSet34)) -}
+a5cfd1f868e5dc893e4de44a4bf853b7
+  rawSet34 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# Record.rawSet35) -}
+0f45935dd9865617101735ad81b422c0
+  rawSet35 :: GHC.Prim.Addr#
+  {- HasNoCafRefs,
+     Unfolding: ("23631 Sunnymead Blvd - Moreno Valley"#) -}
+7cd97907913c0727cfce5e6e70820aa0
+  rawSet36 :: GHC.Types.Float
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.F# -117.25069#) -}
+054d074cc6aa8ed4fb4cccbe85e316e9
+  rawSet37 :: GHC.Types.Float
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.F# 33.93874#) -}
+9bc6d4d19482082254feb6606cf26b84
+  rawSet38 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 12#) -}
+29ba5dfa9048f140fcb13b9f1f93fe4a
+  rawSet39 ::
+    (GHC.Types.Int, GHC.Types.Float, GHC.Types.Float, [GHC.Types.Char])
+  {- Strictness: m,
+     Unfolding: ((Record.rawSet44, Record.rawSet43, Record.rawSet42,
+                  Record.rawSet40)) -}
+d08f537e3b2c20e77a198c1a546551da
+  rawSet4 :: [Record.Record]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ Record.Record
+                   Record.rawSet72
+                   Record.rawSet5) -}
+7b755d47a55927a99a756e5954fc9e78
+  rawSet40 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# Record.rawSet41) -}
+44b46e2c2c73777d0843ed0b94433e65
+  rawSet41 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("26 Broad Ave - Paramus"#) -}
+179930a8ae07a213526e9cad6329db4e
+  rawSet42 :: GHC.Types.Float
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.F# -74.06805#) -}
+1454af7099718c40fa750590d30388ae
+  rawSet43 :: GHC.Types.Float
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.F# 40.92979#) -}
+93571acf85b9d1e94c1d161daece45e6
+  rawSet44 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 11#) -}
+ed5a43a211fc76f5066f68940a2ae972
+  rawSet45 ::
+    (GHC.Types.Int, GHC.Types.Float, GHC.Types.Float, [GHC.Types.Char])
+  {- Strictness: m,
+     Unfolding: ((Record.rawSet50, Record.rawSet49, Record.rawSet48,
+                  Record.rawSet46)) -}
+921721f69b32938a35c814dc1438da66
+  rawSet46 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCStringUtf8# Record.rawSet47) -}
+1df92fe7c7c3fdde9c8d7e63f8595934
+  rawSet47 :: GHC.Prim.Addr#
+  {- HasNoCafRefs,
+     Unfolding: ("Rua Dr Jo\\195\\163o El\\195\\173sio, 327 em Mangueira, Mangueira"#) -}
+05e3508956a268c33228e5b1cd7777d0
+  rawSet48 :: GHC.Types.Float
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.F# -34.919403#) -}
+e46d46928a66d1e291a895661d3b06b5
+  rawSet49 :: GHC.Types.Float
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.F# -8.077838#) -}
+47f21c5023b2731f8ef368114788a993
+  rawSet5 :: [Record.Record]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ Record.Record
+                   Record.rawSet67
+                   Record.rawSet6) -}
+76e07a55f8e578b8ec7de0eaa4a8844c
+  rawSet50 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 10#) -}
+0d63190c0f3c7c0e0f1b05ae023e22cd
+  rawSet51 ::
+    (GHC.Types.Int, GHC.Types.Float, GHC.Types.Float, [GHC.Types.Char])
+  {- Strictness: m,
+     Unfolding: ((Record.rawSet56, Record.rawSet55, Record.rawSet54,
+                  Record.rawSet52)) -}
+779e3608cf47e9bf1034930a49202258
+  rawSet52 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCStringUtf8# Record.rawSet53) -}
+cfaa629e0f936d494912e50250faf62b
+  rawSet53 :: GHC.Prim.Addr#
+  {- HasNoCafRefs,
+     Unfolding: ("Rua Von Martius, Jardim Bot\\195\\162nico"#) -}
+f51b5dd6764377605d97b8051eb8923c
+  rawSet54 :: GHC.Types.Float
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.F# -43.2223#) -}
+54ace1e936ad8a262bd8e387e29d022b
+  rawSet55 :: GHC.Types.Float
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.F# -22.964558#) -}
+a2788d5ffd924c457c0c9fc0109670a3
+  rawSet56 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 9#) -}
+5dd63a431d21f18a35ebcbc46b7ab05a
+  rawSet57 ::
+    (GHC.Types.Int, GHC.Types.Float, GHC.Types.Float, [GHC.Types.Char])
+  {- Strictness: m,
+     Unfolding: ((Record.finalSet5, Record.rawSet61, Record.rawSet60,
+                  Record.rawSet58)) -}
+0ab7b12c6b1b95fa3afec57141443bec
+  rawSet58 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# Record.rawSet59) -}
+0583ace80b208b5fe525d35faa601cfe
+  rawSet59 :: GHC.Prim.Addr#
+  {- HasNoCafRefs,
+     Unfolding: ("Avenida Doutor Vital Brasil, Vila Sao Lucio"#) -}
+7c0b698eb716dc0bb7bb558a95e58903
+  rawSet6 :: [Record.Record]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ Record.Record
+                   Record.rawSet62
+                   Record.rawSet7) -}
+61b11eeb36af887b0622d9224254f072
+  rawSet60 :: GHC.Types.Float
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.F# -48.45168#) -}
+d61b2df7865d751a9613cde9e59152c9
+  rawSet61 :: GHC.Types.Float
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.F# -22.882195#) -}
+1ae5571390eadb23a3111fd48e129513
+  rawSet62 ::
+    (GHC.Types.Int, GHC.Types.Float, GHC.Types.Float, [GHC.Types.Char])
+  {- Strictness: m,
+     Unfolding: ((Record.finalSet6, Record.rawSet66, Record.rawSet65,
+                  Record.rawSet63)) -}
+225c49f7cfab35617d21b45bb0e85c97
+  rawSet63 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# Record.rawSet64) -}
+8dfd2441b8cad2044e6415c92cd02fc1
+  rawSet64 :: GHC.Prim.Addr#
+  {- HasNoCafRefs,
+     Unfolding: ("Av. Dr. Vital Brasil, 771, Vila Sao Lucio"#) -}
+19e645c8527e9829249f015b994ba671
+  rawSet65 :: GHC.Types.Float
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.F# -48.45183#) -}
+3486d0ba1ce3b9b771b2c20dab3f1306
+  rawSet66 :: GHC.Types.Float
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.F# -22.88222#) -}
+64504df35d9cdbd6b5e23670ef1c080b
+  rawSet67 ::
+    (GHC.Types.Int, GHC.Types.Float, GHC.Types.Float, [GHC.Types.Char])
+  {- Strictness: m,
+     Unfolding: ((Record.finalSet8, Record.rawSet71, Record.rawSet70,
+                  Record.rawSet68)) -}
+4089d44570b3dd62a99f71665f1b211c
+  rawSet68 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# Record.rawSet69) -}
+515f94271e5c074f536bad606bf7c301
+  rawSet69 :: GHC.Prim.Addr#
+  {- HasNoCafRefs,
+     Unfolding: ("13835 Lakeside Cir - Sterling Heights - Michigan"#) -}
+89e1d23b02332c1cb47432b6ee528477
+  rawSet7 :: [Record.Record]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ Record.Record
+                   Record.rawSet57
+                   Record.rawSet8) -}
+7c73a46a603c91dc3d3030abe7e1d830
+  rawSet70 :: GHC.Types.Float
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.F# -82.990616#) -}
+2f369bb020dae3dff4647e82ce033572
+  rawSet71 :: GHC.Types.Float
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.F# 42.626156#) -}
+9f3f854465adc40f0c197ee95121d0b8
+  rawSet72 ::
+    (GHC.Types.Int, GHC.Types.Float, GHC.Types.Float, [GHC.Types.Char])
+  {- Strictness: m,
+     Unfolding: ((Record.finalSet9, Record.rawSet76, Record.rawSet75,
+                  Record.rawSet73)) -}
+829f8cb7c3daa4b6c96c4d7479c7591e
+  rawSet73 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# Record.rawSet74) -}
+856f33f24984cb28f23c7dbac7e9cabc
+  rawSet74 :: GHC.Prim.Addr#
+  {- HasNoCafRefs,
+     Unfolding: ("Hall Road - Sterling Heights - Michigan"#) -}
+0c787ec17af0065fac6f12b80d0a449b
+  rawSet75 :: GHC.Types.Float
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.F# -82.9907#) -}
+98cc91f80d98cab8263843b95a0175a9
+  rawSet76 :: GHC.Types.Float
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.F# 42.626225#) -}
+e144c2a3fe86c71815425112f85376be
+  rawSet77 ::
+    (GHC.Types.Int, GHC.Types.Float, GHC.Types.Float, [GHC.Types.Char])
+  {- Strictness: m,
+     Unfolding: ((Record.finalSet11, Record.rawSet81, Record.rawSet80,
+                  Record.rawSet78)) -}
+612b3d0d9932fd1c7aa580568e824f61
+  rawSet78 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCStringUtf8# Record.rawSet79) -}
+e83291d3128cca4438dc8d6104c7a997
+  rawSet79 :: GHC.Prim.Addr#
+  {- HasNoCafRefs,
+     Unfolding: ("Av. Pres. Itamar Franco, 3600, S\\195\\163o Mateus"#) -}
+70c8098aa681bad82d5406ec11a6a2ac
+  rawSet8 :: [Record.Record]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ Record.Record
+                   Record.rawSet51
+                   Record.rawSet9) -}
+2f5d95fe2fefef3da1068e86180969a5
+  rawSet80 :: GHC.Types.Float
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.F# -43.36014#) -}
+0c921113d3d1e0b8a9155ffdbacdf97c
+  rawSet81 :: GHC.Types.Float
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.F# -21.780762#) -}
+618d2f455ff3d78393f9472341a8c135
+  rawSet82 ::
+    (GHC.Types.Int, GHC.Types.Float, GHC.Types.Float, [GHC.Types.Char])
+  {- Strictness: m,
+     Unfolding: ((Record.finalSet12, Record.rawSet86, Record.rawSet85,
+                  Record.rawSet83)) -}
+72ea9180afac78180d33aacdad6f127d
+  rawSet83 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCStringUtf8# Record.rawSet84) -}
+f61ad63ba153d51d3a53ea75b310182e
+  rawSet84 :: GHC.Prim.Addr#
+  {- HasNoCafRefs,
+     Unfolding: ("Av Presidente Itamar Franco, 3600, S\\195\\163o Mateus"#) -}
+688bc9e06fce67a50b21d155aa655dd3
+  rawSet85 :: GHC.Types.Float
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.F# -43.361706#) -}
+9679ef8102d8c9f1bc0b6b81448b70d9
+  rawSet86 :: GHC.Types.Float
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.F# -21.78154#) -}
+8f2f56d8ee6729154da2ce61a64b0880
+  rawSet87 ::
+    (GHC.Types.Int, GHC.Types.Float, GHC.Types.Float, [GHC.Types.Char])
+  {- Strictness: m,
+     Unfolding: ((Record.finalSet14, Record.rawSet91, Record.rawSet90,
+                  Record.rawSet88)) -}
+e07208bac42406d57d5995009718d57c
+  rawSet88 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCStringUtf8# Record.rawSet89) -}
+2441a7768ed5dde9b72ca75f37fb3542
+  rawSet89 :: GHC.Prim.Addr#
+  {- HasNoCafRefs,
+     Unfolding: ("Av. Andr\\195\\180meda, 100, Jardim Sat\\195\\169lite - S\\195\\163o Jos\\195\\169 dos Campos"#) -}
+0703de8ec25d57a1fd909403a9bae8e3
+  rawSet9 :: [Record.Record]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ Record.Record
+                   Record.rawSet45
+                   Record.rawSet10) -}
+6f3d8a6146aa10769bf047054c9f4bd1
+  rawSet90 :: GHC.Types.Float
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.F# -45.895428#) -}
+1f5b987f528900f39d105b57bc12338c
+  rawSet91 :: GHC.Types.Float
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.F# -23.217566#) -}
+94075f9b7ed083398507cdcf7f6ab0e2
+  rawSet92 ::
+    (GHC.Types.Int, GHC.Types.Float, GHC.Types.Float, [GHC.Types.Char])
+  {- Strictness: m,
+     Unfolding: ((Record.finalSet15, Record.rawSet96, Record.rawSet95,
+                  Record.rawSet93)) -}
+7c467fec0e6b951eadc078976a6e1e13
+  rawSet93 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCStringUtf8# Record.rawSet94) -}
+d60c24eff89625c33cb504a9d1fcd904
+  rawSet94 :: GHC.Prim.Addr#
+  {- HasNoCafRefs,
+     Unfolding: ("Avenida Andr\\195\\180meda, Jardim Sat\\195\\169lite - S\\195\\163o Jos\\195\\169 dos Campos"#) -}
+8d2288bef0b4b6cff59e838201846532
+  rawSet95 :: GHC.Types.Float
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.F# -45.89552#) -}
+fec002e27347263f3640933edb003fff
+  rawSet96 :: GHC.Types.Float
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.F# -23.217638#) -}
+767dc85ca6e0047fe9e7f5e73a5ccb61
+  singles :: [GHC.Types.Int]
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ GHC.Types.Int
+                   Record.rawSet56
+                   Record.singles1) -}
+42ae2a3d2927a0081f92548acdca38aa
+  singles1 :: [GHC.Types.Int]
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ GHC.Types.Int
+                   Record.rawSet50
+                   Record.singles2) -}
+20d3d1438b20a7c0a0f20d419b705649
+  singles2 :: [GHC.Types.Int]
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ GHC.Types.Int
+                   Record.rawSet44
+                   Record.singles3) -}
+565aa372814608311a2a31631adb87a5
+  singles3 :: [GHC.Types.Int]
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ GHC.Types.Int
+                   Record.rawSet38
+                   Record.singles4) -}
+9c976affa6197267e0f93d9aa0687401
+  singles4 :: [GHC.Types.Int]
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ GHC.Types.Int
+                   Record.rawSet32
+                   Record.singles5) -}
+9927c7550ba40e3c12fe9444d0b9ab75
+  singles5 :: [GHC.Types.Int]
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ GHC.Types.Int
+                   Record.rawSet26
+                   Record.singles6) -}
+6e98b5afc208066107f7b3c3f68b9235
+  singles6 :: [GHC.Types.Int]
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ GHC.Types.Int
+                   Record.rawSet20
+                   (GHC.Types.[] @ GHC.Types.Int)) -}
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: safe
+require own pkg trusted: False
+
