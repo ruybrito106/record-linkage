@@ -8,8 +8,11 @@ module Individual (
     sortByFitness,
     takeBest,
     fitness,
+    fitness',
     newIndividual,
     allFitness,
+    allFitness',
+    describe,
 ) where
 
 import Record
@@ -21,13 +24,13 @@ data Individual = I Int Float Float Float
     deriving Show
 
 instance Eq Individual where
-    a == b = fitness a == fitness b
+    a == b = fitness' a == fitness' b
 
 instance Ord Individual where
-    a <= b = fitness a <= fitness b
+    a <= b = fitness' a <= fitness' b
 
 threshold :: Float
-threshold = 0.8
+threshold = 0.90
 
 newIndividual :: Int -> Float -> Float -> Float -> Individual
 newIndividual x a b c  = I x a b c
@@ -41,8 +44,8 @@ fromFactors (a:b:as) = newIndividual (-1) (a) (b) (head as)
 toList :: [Individual]
 toList = [I (-1) (a) (b) ((a + b)/2.0) | a <- as, b <- bs]
     where
-        as = map (\x -> x / 2.0) ([0..2] :: [Float])
-        bs = map (\x -> x / 2.0) ([2, 1..0] :: [Float])
+        as = map (\x -> x / 4.05) ([0..4] :: [Float])
+        bs = map (\x -> x / 3.25) ([3, 2..1] :: [Float])
 
 sortByFitness :: [Individual] -> [Individual]
 sortByFitness l = sort l
@@ -95,6 +98,8 @@ genEdges' i (p:ps)
 genEdges :: Individual -> [Record] -> [(Int,Int)]
 genEdges i rs = filter (\x -> fst x < snd x) (genEdges' (i) (genPairs rs rs)) 
 
+-- Using disjoint sets
+
 truePositives :: [(Int,Int)] -> Int
 truePositives [] = 0
 truePositives (a:as) 
@@ -123,10 +128,26 @@ trueNegatives l = (quot (x * (x - 1)) (2)) + (x * 2 * y) - (falsePositives l)
         x = length singles
         y = length finalSet
 
-fitness :: Individual -> Float
-fitness i 
-    | (tp + fn) * (tn + tp) == 0.0 = 0.0
-    | otherwise = (tn * tp) / ((tp + fn) * (tn + tp)) 
+-- Using transitive closure
+
+truePositives' :: [(Int,Int)] -> Int
+truePositives' [] = 0
+truePositives' (a:as) 
+    | membershipFinalSet (a) (finalSetTransitiveClosure)  = 1 + truePositives' as
+    | otherwise = truePositives' as
+
+falsePositives' :: [(Int, Int)] -> Int
+falsePositives' [] = 0
+falsePositives' (a:as) 
+    | (xor (contains (fst (a)) (singles)) (contains (snd (a)) (singles))) || membershipFinalSet (a) (finalSetTransitiveClosure) == False = 1 + falsePositives' as
+    | otherwise = falsePositives' as
+    where
+        contains x [] = False
+        contains x (a:as) = x == a || (contains x as)
+        xor a b = (a == False && b == True) || (a == True && b == False)
+
+describe :: Individual -> ([(Int, Int)], [Int])
+describe i = (edges, [tn, fp, tp, fn])
     where
         edges = genEdges i rawSet
         tn = fromIntegral (trueNegatives edges)
@@ -134,5 +155,34 @@ fitness i
         tp = fromIntegral (truePositives edges)
         fn = fromIntegral (falseNegatives edges)
 
+fitness :: Individual -> Float
+fitness i 
+    | (fn + tp) * (tn + fp) == 0.0 = 0.0
+    | otherwise = ((tp * (tn + fp)) + (tn * (fn + tp))) / (2 * (fn + tp) * (tn + fp))  
+    where
+        edges = genEdges i rawSet
+        tn = fromIntegral (trueNegatives edges)
+        fp = fromIntegral (falsePositives edges)
+        tp = fromIntegral (truePositives edges)
+        fn = fromIntegral (falseNegatives edges)
+
+
+fitness' :: Individual -> Float
+fitness' i 
+    | (fn + tp) * (tn + fp) == 0.0 = 0.0
+    | otherwise = ((tp * (tn + fp)) + (tn * (fn + tp))) / (2 * (fn + tp) * (tn + fp))  
+    where
+        edges = genEdges i rawSet
+        tn = fromIntegral (trueNegatives edges)
+        fp = fromIntegral (falsePositives' edges)
+        tp = fromIntegral (truePositives' edges)
+        fn = fromIntegral (falseNegatives edges)
+
 allFitness :: [Individual] -> [Float]
-allFitness l = map (\x -> fitness x) l 
+allFitness l = map (\x -> fitness x) l
+
+allFitness' :: [Individual] -> [Float]
+allFitness' l = map (\x -> fitness' x) l
+
+-- tp / (tp + fn)
+-- tn / (tn + fp)
